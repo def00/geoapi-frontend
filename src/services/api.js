@@ -1,5 +1,5 @@
 import axios from 'axios';
-const BASE_URL = process.env.API_ADDRESS;
+const BASE_URL = 'https://test-geoapi-backend.herokuapp.com/api';
 
 export default {
     /**
