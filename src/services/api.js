@@ -36,7 +36,7 @@ export default {
      * @returns {Promise<any>}
      */
     async getRecords (token) {
-        return await axios.get(BASE_URL + '/addresses/', {
+        return await axios.get(BASE_URL + '/addresses', {
             headers: {
                 Authorization: 'Bearer ' + token
             }
@@ -62,7 +62,7 @@ export default {
      * @returns {Promise<any>}
      */
     async addRecord (token, data ) {
-        return await axios.post(BASE_URL + '/addresses/', data, {
+        return await axios.post(BASE_URL + '/addresses', data, {
             headers: {
                 Authorization: 'Bearer ' + token
             }
