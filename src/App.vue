@@ -1,10 +1,29 @@
 <template>
   <div id="app">
-    <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
-    </div>
-    <router-view/>
+    <el-container>
+      <el-aside>
+        <el-menu>
+          <el-menu-item index="1" v-if="!user.loggedIn">
+            <router-link to="/register">Register</router-link>
+          </el-menu-item>
+          <el-menu-item index="2" v-if="!user.loggedIn">
+            <router-link to="/login">Login</router-link>
+          </el-menu-item>
+          <el-menu-item index="4" v-if="user.loggedIn">
+            <router-link to="/logout">Logout</router-link>
+          </el-menu-item>
+          <el-menu-item index="3" v-if="user.loggedIn">
+            <router-link to="/list">Your records</router-link>
+          </el-menu-item>
+          <el-menu-item index="5" v-if="user.loggedIn">
+            <router-link to="/find">Find</router-link>
+          </el-menu-item>
+        </el-menu>
+      </el-aside>
+      <router-view/>
+
+    </el-container>
+   
   </div>
 </template>
 
@@ -16,16 +35,16 @@
   text-align: center;
   color: #2c3e50;
 }
-#nav {
-  padding: 30px;
-}
-
-#nav a {
-  font-weight: bold;
-  color: #2c3e50;
-}
-
-#nav a.router-link-exact-active {
-  color: #42b983;
-}
+  a {
+    color: #000;
+  }
 </style>
+<script>
+  import { mapState } from 'vuex'
+  export default {
+      name: "app",
+      computed: {
+          ...mapState(['user']),
+      }
+  }
+</script>
