@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/3.6.3/workbox-sw.js");
 
 importScripts(
-  "/precache-manifest.810a09b6efd1c31e0ff63e45324c9e6f.js"
+  "/precache-manifest.97ac7c25559dd3187209860c9179a672.js"
 );
 
 workbox.core.setCacheNameDetails({prefix: "geo-api-example-frontend"});
