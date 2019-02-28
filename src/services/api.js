@@ -36,7 +36,7 @@ export default {
      * @returns {Promise<any>}
      */
     async getRecords (token) {
-        return await axios.get(BASE_URL + '/list', {
+        return await axios.get(BASE_URL + '/addresses', {
             headers: {
                 Authorization: 'Bearer ' + token
             }
@@ -49,7 +49,7 @@ export default {
      * @returns {Promise<void>}
      */
     async deleteRecord (token, id) {
-        return await axios.delete(BASE_URL + '/address/' + id, {
+        return await axios.delete(BASE_URL + '/addresses/' + id, {
             headers: {
                 Authorization: 'Bearer ' + token
             }
@@ -62,7 +62,7 @@ export default {
      * @returns {Promise<any>}
      */
     async addRecord (token, data ) {
-        return await axios.post(BASE_URL + '/address/', data, {
+        return await axios.post(BASE_URL + '/addresses/', data, {
             headers: {
                 Authorization: 'Bearer ' + token
             }
@@ -75,7 +75,7 @@ export default {
      * @returns {Promise<any>}
      */
     async editRecord (token, data ) {
-        return await axios.put(BASE_URL + '/address/' + data.id, data,{
+        return await axios.put(BASE_URL + '/addresses/' + data.id, data,{
             headers: {
                 Authorization: 'Bearer ' + token
             }
